@@ -45,7 +45,7 @@ const join_room = (room_key, player) => {
   if (player in all_sessions[room_key].players){
     return true;
   }
-  if(all_sessions[room_key].status !== ROOM_STATE_STARTED){
+  if(all_sessions[room_key].status !== ROOM_STATE_CREATED){
     return false;
   }
 
