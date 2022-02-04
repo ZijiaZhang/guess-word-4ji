@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "build": "cd guess-words-4ji && npm run build && cd .. && rm -rf dist || rmdir /q /s dist && mv guess-words-4ji/dist .. || move guess-words-4ji/dist ."
+    "build-internal": "cd guess-words-4ji && npm run build && cd .. && rm -rf dist || rmdir /q /s dist && mv guess-words-4ji/dist .. || move guess-words-4ji/dist ."
   },
   "dependencies": {
     "body-parser": "^1.19.1",
