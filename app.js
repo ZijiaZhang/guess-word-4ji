@@ -188,6 +188,7 @@ io.on('connection', (socket) => {
         // console.log(room_key, player, 'Create Room')
         if (create_room(room_key, player)){
             socket.emit('room_created', get_room_data(room_key));
+            io.socketsLeave(room_key);
             socket.join(room_key);
             io.to(room_key).emit('room_update', get_room_data(room_key))
             socket.data.player = player;
