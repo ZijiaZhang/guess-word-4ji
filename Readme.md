@@ -12,3 +12,4 @@ This project is a multiplayer version of Wordle. All the words are from [CET-4](
 - Support WebRTC(?)
 - Support Random match making
 - Support Custom words
+- Support Horizontal Scaling
