@@ -1,10 +1,10 @@
 # Guess Words 4ji
 
 This project is inspired by Wordle. 
-
-## What is this
-
-This project is a multiplayer version of Wordle. All the words are from [CET-4](https://github.com/cuttlin/Vocabulary-of-CET-4). Deployed on [heroku](http://guess-words.herokuapp.com/).
+## Deployed on [heroku](https://guess-words.herokuapp.com/).
+![img.png](images/img.png)
+## What is this?
+This project is a multiplayer version of Wordle. All the words are from [CET-4](https://github.com/cuttlin/Vocabulary-of-CET-4). 
 
 ## Instruction
 1. To start, put down a unique room id and click 'Create Room'.
