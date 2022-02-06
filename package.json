@@ -7,11 +7,14 @@
     "build-internal": "cd guess-words-4ji && npm run build && cd .. && rm -rf dist || rmdir /q /s dist && mv guess-words-4ji/dist .. || move guess-words-4ji/dist ."
   },
   "dependencies": {
+    "@google-cloud/firestore": "^5.0.2",
+    "@socket.io/redis-adapter": "^7.1.0",
     "body-parser": "^1.19.1",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "express": "~4.16.1",
     "morgan": "~1.9.1",
+    "redis": "^4.0.3",
     "socket.io": "^4.4.1",
     "uuid": "^8.3.2",
     "ws": "^8.4.2"
