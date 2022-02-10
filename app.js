@@ -1,5 +1,7 @@
 const {ROOM_STATE_CREATED, ROOM_STATE_ENDED, ROOM_STATE_STARTED, STATUS_PARTIAL_CORRECT, STATUS_ALL_CORRECT, STATUS_NOT_CORRECT, PLAYER_ROLE_CREATOR, PLAYER_ROLE_PLAYER, STATUS_UNKNOWN} = require('./constants')
-const {redisClient, addRoomHistory, createRoom, getRoomFromCache, playerJoinRoom, setRoomEnd, setRoomStart, removePlayerFromRoom, markPlayerAsDisconnected} = require('./redis')
+const {redisClient, addRoomHistory, createRoom, getRoomFromCache, playerJoinRoom, setRoomEnd, setRoomStart, removePlayerFromRoom, markPlayerAsDisconnected,
+    findMatch
+} = require('./redis')
 
 var express = require('express');
 var path = require('path');
@@ -88,6 +90,9 @@ const serverPromise =  Promise.all([pubClient.connect(), subClient.connect()]).t
     }
 
     const get_room_data = async (room_key) => {
+        if(!room_key){
+            throw {msg: 'connection error roomKey error'}
+        }
         let room = await getRoomFromCache(room_key)
         return parse_room_data(room);
     }
@@ -156,8 +161,33 @@ const serverPromise =  Promise.all([pubClient.connect(), subClient.connect()]).t
                 }
             }
         }
+        socket.on('match_making', error_catcher_async(async ({player}, callBack) => {
+            if (!player.player_name){
+                callBack('Invalid Player Name', undefined);
+                throw {msg: 'Invalid Player Name'};
+            }
+            let room = await findMatch(player);
+            socket.join(room.room_key);
+            socket.data.room_key = room.room_key;
+            socket.data.player = player;
+            io.to(socket.data.room_key).emit('info',  `${player.player_name} joined the room`);
+            if (Object.keys(room.players).length !== 2){
+                callBack(undefined, room);
+                return;
+            }
+            // Start the game
+            room = await setRoomStart(socket.data.room_key, get_random_word());
+            const log = {phase: 'game_start', room};
+            console.log(JSON.stringify(log))
+            io.to(socket.data.room_key).emit('game_start', room.word.word.length);
+            callBack(undefined, room);
+        }));
 
         socket.on('create', error_catcher_async(async ({ room_key, player }, callBack) => {
+            if(!room_key || !player.player_name){
+                callBack('Invalid room name or player name', undefined);
+                throw {msg: 'Invalid room name or player name'};
+            }
             // console.log(room_key, player, 'Create Room')
             if (await createRoom(room_key, player)) {
                 const prev_sockets = await io.in(room_key).allSockets();
@@ -168,23 +198,33 @@ const serverPromise =  Promise.all([pubClient.connect(), subClient.connect()]).t
                 socket.data.player = player;
                 socket.data.room_key = room_key;
                 // Room Created Callback
-                let data = await get_room_data(room_key);
-                callBack(data);
+                let room = await get_room_data(room_key);
+                const log = {phase: 'room_created', room};
+                console.log(JSON.stringify(log))
+                callBack(undefined, room);
             } else {
+                callBack('Cannot create room', undefined);
                 throw { msg: 'Cannot create room' };
             }
         }))
         socket.on('join', error_catcher_async(async ({ room_key, player }, callBack) => {
+            if(!room_key|| !player.player_name){
+                callBack('Invalid room name or player name', undefined);
+                throw {msg: 'Invalid room name or player name'};
+            }
             if (await playerJoinRoom(room_key, player)) {
                 socket.join(room_key)
                 console.log(await io.in(room_key).allSockets())
                 const room = await get_room_data(room_key);
-                callBack(room);
+                callBack(undefined, room);
                 io.to(room_key).emit('player_list_updated', room.players);
                 socket.data.player = player;
                 socket.data.room_key = room_key;
+                const log = {phase: 'player_join', room};
+                console.log(JSON.stringify(log))
                 io.to(room_key).emit('info',  `${player.player_name} joined the room`);
             } else {
+                callBack('Cannot create room', undefined );
                 throw { msg: 'Cannot join room' };
             }
         }))
@@ -195,29 +235,42 @@ const serverPromise =  Promise.all([pubClient.connect(), subClient.connect()]).t
         }))
 
         socket.on('start', error_catcher_async(async () => {
+            if(!socket.data.room_key){
+                throw {msg: 'connection error roomKey error'}
+            }
             let room = await getRoomFromCache(socket.data.room_key);
             if (room.players[socket.data.player.player_id].role !==PLAYER_ROLE_CREATOR) {
                 throw {msg: 'only Owner can start the game'}
             }
             room = await setRoomStart(socket.data.room_key, get_random_word());
+            const log = {phase: 'game_start', room};
+            console.log(JSON.stringify(log))
             io.to(socket.data.room_key).emit('game_start', room.word.word.length);
         }))
 
         socket.on('word_len', error_catcher_async(async (callBack) => {
+            if(!socket.data.room_key){
+                throw {msg: 'connection error roomKey error'}
+            }
             let room = await getRoomFromCache(socket.data.room_key);
             callBack(room.word.word.length);
         }))
 
         socket.on('submit', error_catcher_async(async ({ word }, errorCallBack) => {
+            if(!socket.data.room_key){
+                throw {msg: 'connection error roomKey error'}
+            }
             word = word.toLowerCase();
             let room = await getRoomFromCache(socket.data.room_key);
             const target = room.word.word;
             // console.log(target);
             if (word.length !== target.length) {
                 errorCallBack('word length mismatch');
+                return;
             }
-            if (socket.data.player !== room.pending_players[room.current_round]) {
-                errorCallBack('Not your round');
+            if (socket.data.player.player_id !== room.pending_players[room.current_round]) {
+                errorCallBack(`Not your round ${socket.data.player.player_id} !=== ${room.pending_players[room.current_round]}`);
+                return
             }
             const final_result = get_word_matches(word, target)
             room = await addRoomHistory(socket.data.room_key, {
@@ -228,16 +281,43 @@ const serverPromise =  Promise.all([pubClient.connect(), subClient.connect()]).t
             if (word === target) {
                 room = await setRoomEnd(socket.data.room_key)
             }
+            const log = {phase: 'submit_end', room};
+            console.log(JSON.stringify(log))
             io.to(socket.data.room_key).emit('room_update', parse_room_data(room));
-            io.socketsLeave(socket.data.room_key);
         }))
 
         socket.on('get_word', error_catcher_async(async (callBack) => {
+            if(!socket.data.room_key){
+                throw {msg: 'connection error roomKey error'}
+            }
             const room = await getRoomFromCache(socket.data.room_key);
             if (room.status === ROOM_STATE_ENDED) {
                 callBack(room.word);
             }
         }))
+
+        socket.on('timeout', error_catcher_async(async () => {
+            let room = await getRoomFromCache(socket.data.room_key);
+            if (new Date() - 30 * 1000 < room.current_round_time){
+                return;
+            }
+            const target = room.word.word;
+            let final_result = target.split('').map(() => {
+                return {
+                    char: '_',
+                    status: STATUS_UNKNOWN
+                }
+            })
+            const player_id = room.pending_players[room.current_round]
+            room = await addRoomHistory(socket.data.room_key, {
+                word: final_result,
+                player_id: player_id,
+                player_name: room.players[player_id].player_name + ' TIMEOUT'
+            })
+            const log = {phase: `${room.players[player_id]} timeout`, room};
+            console.log(JSON.stringify(log));
+            io.to(socket.data.room_key).emit('room_update', parse_room_data(room));
+        }));
 
         socket.on('leave_room', error_catcher_async(async () => {
             if (!socket.data.room_key || !socket.data.player || !socket.data.player.player_id) {
@@ -246,7 +326,11 @@ const serverPromise =  Promise.all([pubClient.connect(), subClient.connect()]).t
             let room = await removePlayerFromRoom(socket.data.room_key, socket.data.player.player_id)
             socket.leave(socket.data.room_key);
             io.to(socket.data.room_key).emit('player_left', parse_room_data(room));
-            io.to(socket.data.room_key).emit('warn', `Player ${socket.data.player.player_name} left room, reorganizing the rounds`);
+            if(room.status !== ROOM_STATE_ENDED) {
+                io.to(socket.data.room_key).emit('warn', `Player ${socket.data.player.player_name} left room, reorganizing the rounds`);
+            }
+            const log = {phase: 'player_left', room};
+            console.log(JSON.stringify(log))
             socket.data.room_key = undefined;
         }))
 
@@ -254,7 +338,9 @@ const serverPromise =  Promise.all([pubClient.connect(), subClient.connect()]).t
             if (!socket.data.room_key || !socket.data.player || !socket.data.player.player_id) {
                 return;
             }
-            await markPlayerAsDisconnected(socket.data.room_key, socket.data.player.player_id);
+            const room = await markPlayerAsDisconnected(socket.data.room_key, socket.data.player.player_id);
+            const log = {phase: 'player_disconnected', room};
+            console.log(JSON.stringify(log))
             io.to(socket.data.room_key).emit('warn',  `${socket.data.player.player_name} has disconnected`);
         }))
 
