@@ -4,7 +4,7 @@ const {v4: uuidv4} = require('uuid');
 
 const db = new Firestore({
     projectId: 'golden-tide-340508',
-    keyFilename: 'key/golden-tide-340508-ea4a960ebfab.json',
+    keyFilename: 'key/golden-tide-340508-6a68baf365e6.json',
 });
 
 const REDISHOST = process.env.REDISHOST || '192.168.86.22';
