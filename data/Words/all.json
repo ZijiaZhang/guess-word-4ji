@@ -487,12 +487,6 @@
   },
   {
     "initial": "A",
-    "mean": "vt.任命，委任;约定",
-    "phonetic_symbol": "/ə’pɔint/",
-    "word": "appɔint"
-  },
-  {
-    "initial": "A",
     "mean": "vt.欣赏;领会;感谢",
     "phonetic_symbol": "/ə’pri:ʃieit/",
     "word": "appreciate"
@@ -658,12 +652,6 @@
     "mean": "vt.使惊讶，使吃惊",
     "phonetic_symbol": "/əs’tɔniʃ/",
     "word": "astonish"
-  },
-  {
-    "initial": "A",
-    "mean": "n.宇宙航行员，宇航员",
-    "phonetic_symbol": "/‘æstʃəunɔ:t/",
-    "word": "astronaut"
   },
   {
     "initial": "A",
@@ -949,12 +937,6 @@
   },
   {
     "initial": "B",
-    "mean": "ad.基本上",
-    "phonetic_symbol": "/‘beisikəli/",
-    "word": "basically"
-  },
-  {
-    "initial": "B",
     "mean": "n.盆，洗脸盆;盆地",
     "phonetic_symbol": "/‘beisn/",
     "word": "basin"
@@ -973,12 +955,6 @@
   },
   {
     "initial": "B",
-    "mean": "n.篮球;篮球运动",
-    "phonetic_symbol": "/‘ba:skitbɔ:l/",
-    "word": "basketball"
-  },
-  {
-    "initial": "B",
     "mean": "n.浴，洗澡;浴缸",
     "phonetic_symbol": "/ba:θ/",
     "word": "bath"
@@ -988,12 +964,6 @@
     "mean": "vt.给…洗澡;弄湿",
     "phonetic_symbol": "/beið/",
     "word": "bathe"
-  },
-  {
-    "initial": "B",
-    "mean": "n.浴室;盥洗室",
-    "phonetic_symbol": "/‘ba:θrum/",
-    "word": "bathroom"
   },
   {
     "initial": "B",
@@ -1279,12 +1249,6 @@
   },
   {
     "initial": "B",
-    "mean": "n.基督教《圣经》",
-    "phonetic_symbol": "/‘baibl/",
-    "word": "Bible"
-  },
-  {
-    "initial": "B",
     "mean": "n.自行车，脚踏车",
     "phonetic_symbol": "/‘baisikl/",
     "word": "bicycle"
@@ -1480,12 +1444,6 @@
     "mean": "n.身体;主体;尸体",
     "phonetic_symbol": "/‘bɔdi/",
     "word": "body"
-  },
-  {
-    "initial": "B",
-    "mean": "vi.沸腾;汽化vt.煮沸",
-    "phonetic_symbol": "/bɔil/",
-    "word": "bɔil"
   },
   {
     "initial": "B",
@@ -1762,12 +1720,6 @@
     "mean": "vt.带来;引出;促使",
     "phonetic_symbol": "/briŋ/",
     "word": "bring"
-  },
-  {
-    "initial": "B",
-    "mean": "a.不列颠的，英联邦的",
-    "phonetic_symbol": "/‘britiʃ/",
-    "word": "British"
   },
   {
     "initial": "B",
@@ -2050,12 +2002,6 @@
     "mean": "n.罐头，听头;容器",
     "phonetic_symbol": "/kæn/",
     "word": "can"
-  },
-  {
-    "initial": "C",
-    "mean": "a.加拿大的",
-    "phonetic_symbol": "/kə’neidjən/",
-    "word": "Canadian"
   },
   {
     "initial": "C",
@@ -2593,21 +2539,9 @@
   },
   {
     "initial": "C",
-    "mean": "n.中国",
-    "phonetic_symbol": "/‘tʃainə/",
-    "word": "China"
-  },
-  {
-    "initial": "C",
     "mean": "n.瓷器，瓷料",
     "phonetic_symbol": "/‘tʃainə/",
     "word": "china"
-  },
-  {
-    "initial": "C",
-    "mean": "a.中国的n.中国人",
-    "phonetic_symbol": "/‘tʃai’ni:z/",
-    "word": "Chinese"
   },
   {
     "initial": "C",
@@ -2641,18 +2575,6 @@
   },
   {
     "initial": "C",
-    "mean": "n.基督教徒;信徒",
-    "phonetic_symbol": "/‘kristiən/",
-    "word": "Christian"
-  },
-  {
-    "initial": "C",
-    "mean": "n.圣诞节",
-    "phonetic_symbol": "/‘krisməs/",
-    "word": "Christmas"
-  },
-  {
-    "initial": "C",
     "mean": "n.教堂，礼拜堂;教会",
     "phonetic_symbol": "/tʃə:tʃ/",
     "word": "church"
@@ -2662,12 +2584,6 @@
     "mean": "n.香烟，纸烟，卷烟",
     "phonetic_symbol": "/sigə’ret/",
     "word": "cigarette"
-  },
-  {
-    "initial": "C",
-    "mean": "n.电影院;电影，影片",
-    "phonetic_symbol": "/‘sinimə/",
-    "word": "cinema"
   },
   {
     "initial": "C",
@@ -2782,12 +2698,6 @@
     "mean": "n.同班同学",
     "phonetic_symbol": "/‘kla:smeit/",
     "word": "classmate"
-  },
-  {
-    "initial": "C",
-    "mean": "n.教室，课堂",
-    "phonetic_symbol": "/‘kla:srum/",
-    "word": "classroom"
   },
   {
     "initial": "C",
@@ -3238,12 +3148,6 @@
     "mean": "a.结合的;复杂的",
     "phonetic_symbol": "/‘kɔmpleks/",
     "word": "complex"
-  },
-  {
-    "initial": "C",
-    "mean": "a.复杂的，难懂的",
-    "phonetic_symbol": "/‘kɔmplikeitid/",
-    "word": "complicated"
   },
   {
     "initial": "C",
@@ -4075,12 +3979,6 @@
   },
   {
     "initial": "C",
-    "mean": "vt.批评;评论;非难",
-    "phonetic_symbol": "/‘kritisaiz/",
-    "word": "criticize"
-  },
-  {
-    "initial": "C",
     "mean": "n.农作物，庄稼;一熟",
     "phonetic_symbol": "/krɔp/",
     "word": "crop"
@@ -4432,12 +4330,6 @@
     "mean": "vt.欺骗,蒙蔽,行骗",
     "phonetic_symbol": "[di’si:v]",
     "word": "deceive"
-  },
-  {
-    "initial": "D",
-    "mean": "n.十二月",
-    "phonetic_symbol": "[di’sembə]",
-    "word": "December"
   },
   {
     "initial": "D",
@@ -4885,12 +4777,6 @@
   },
   {
     "initial": "D",
-    "mean": "n.对话,对白",
-    "phonetic_symbol": "[‘daiəlɔɡ]",
-    "word": "dialog"
-  },
-  {
-    "initial": "D",
     "mean": "n.直径",
     "phonetic_symbol": "[dai’æmitə]",
     "word": "diameter"
@@ -5161,12 +5047,6 @@
   },
   {
     "initial": "D",
-    "mean": "n.不光彩;丢脸的人",
-    "phonetic_symbol": "[dis’ɔnə]",
-    "word": "dishonour"
-  },
-  {
-    "initial": "D",
     "mean": "vt.&n.不喜爱,厌恶",
     "phonetic_symbol": "[dis’laik]",
     "word": "dislike"
@@ -5377,12 +5257,6 @@
   },
   {
     "initial": "D",
-    "mean": "n.宿舍",
-    "phonetic_symbol": "[dɔ:m]",
-    "word": "dorm"
-  },
-  {
-    "initial": "D",
     "mean": "n.集体寝室;宿舍",
     "phonetic_symbol": "[‘dɔ:mitri]",
     "word": "dormitory"
@@ -5482,12 +5356,6 @@
     "mean": "a.引人注目的,戏剧的",
     "phonetic_symbol": "[drə’mætik]",
     "word": "dramatic"
-  },
-  {
-    "initial": "D",
-    "mean": ".画,划;拖;拨出",
-    "phonetic_symbol": "[drɔ:]",
-    "word": "drawvt"
   },
   {
     "initial": "D",
@@ -6349,18 +6217,6 @@
   },
   {
     "initial": "E",
-    "mean": "n.欧洲",
-    "phonetic_symbol": "/‘juərəp/",
-    "word": "Europe"
-  },
-  {
-    "initial": "E",
-    "mean": "a.欧洲的n.欧洲人",
-    "phonetic_symbol": "/juərə’pi:ən/",
-    "word": "European"
-  },
-  {
-    "initial": "E",
     "mean": "vt.评价，估…的价",
     "phonetic_symbol": "/i’væljueit/",
     "word": "evaluate"
@@ -6494,12 +6350,6 @@
   {
     "initial": "E",
     "mean": "n.考试;检查，细查",
-    "phonetic_symbol": "/ig’zæm/",
-    "word": "exam"
-  },
-  {
-    "initial": "E",
-    "mean": "n.考试;检查，细查",
     "phonetic_symbol": "/igzæmi’neiʃən/",
     "word": "examination"
   },
@@ -6586,12 +6436,6 @@
     "mean": "vt.把…排除在外",
     "phonetic_symbol": "/iks’klu:d/",
     "word": "exclude"
-  },
-  {
-    "initial": "E",
-    "mean": "ad.专门地",
-    "phonetic_symbol": "/iks’klu:sivli/",
-    "word": "exclusively"
   },
   {
     "initial": "E",
@@ -6742,12 +6586,6 @@
     "mean": "vt.使爆炸vi.爆炸",
     "phonetic_symbol": "/iks’pləud/",
     "word": "explode"
-  },
-  {
-    "initial": "E",
-    "mean": "vt.剥削;利用;开拓",
-    "phonetic_symbol": "/‘eksplɔit,iks’plɔit/",
-    "word": "explɔit"
   },
   {
     "initial": "E",
@@ -7117,24 +6955,6 @@
   },
   {
     "initial": "F",
-    "mean": "n.好感;赞同;恩惠",
-    "phonetic_symbol": "/‘feivə/",
-    "word": "favour"
-  },
-  {
-    "initial": "F",
-    "mean": "a.有利的;赞成的",
-    "phonetic_symbol": "/‘feivərəbl/",
-    "word": "favourable"
-  },
-  {
-    "initial": "F",
-    "mean": "a.特别受喜爱的",
-    "phonetic_symbol": "/‘feivərit/",
-    "word": "favourite"
-  },
-  {
-    "initial": "F",
     "mean": "n.害怕;担心vt.害怕",
     "phonetic_symbol": "/fiə/",
     "word": "fear"
@@ -7165,12 +6985,6 @@
   },
   {
     "initial": "F",
-    "mean": "n.二月",
-    "phonetic_symbol": "/‘februəri/",
-    "word": "ʃebruary"
-  },
-  {
-    "initial": "F",
     "mean": "a.联邦的;联盟的",
     "phonetic_symbol": "/‘fedərəl/",
     "word": "federal"
@@ -7186,12 +7000,6 @@
     "mean": "vt.喂(养)vi.吃饲料",
     "phonetic_symbol": "/fi:d/",
     "word": "feed"
-  },
-  {
-    "initial": "F",
-    "mean": "n.回授，反馈，反应",
-    "phonetic_symbol": "/‘fi:dbæk/",
-    "word": "feedback"
   },
   {
     "initial": "F",
@@ -7480,12 +7288,6 @@
     "mean": "n.一套房间;单元住宅",
     "phonetic_symbol": "/flæt/",
     "word": "flat"
-  },
-  {
-    "initial": "F",
-    "mean": "n.味，味道;风味",
-    "phonetic_symbol": "/‘fleivə/",
-    "word": "flavour"
   },
   {
     "initial": "F",
@@ -7891,12 +7693,6 @@
   },
   {
     "initial": "F",
-    "mean": "a.法国的n.法国人",
-    "phonetic_symbol": "/frentʃ/",
-    "word": "ʃrench"
-  },
-  {
-    "initial": "F",
     "mean": "n.屡次;次数;频率",
     "phonetic_symbol": "/‘fri:kwənsi/",
     "word": "frequency"
@@ -7918,12 +7714,6 @@
     "mean": "n.摩擦，摩擦力",
     "phonetic_symbol": "/‘frikʃən/",
     "word": "friction"
-  },
-  {
-    "initial": "F",
-    "mean": "n.星期五",
-    "phonetic_symbol": "/‘fraidi/",
-    "word": "ʃriday"
   },
   {
     "initial": "F",
@@ -8014,12 +7804,6 @@
     "mean": "n.燃料vt.给…加燃料",
     "phonetic_symbol": "/fjuəl/",
     "word": "fuel"
-  },
-  {
-    "initial": "F",
-    "mean": "vt.履行;满足;完成",
-    "phonetic_symbol": "/ful’fil/",
-    "word": "fulfil"
   },
   {
     "initial": "F",
@@ -8281,12 +8065,6 @@
   },
   {
     "initial": "G",
-    "mean": "a.德国的n.德国人",
-    "phonetic_symbol": "/‘dʒə:mən/",
-    "word": "German"
-  },
-  {
-    "initial": "G",
     "mean": "n.姿势，手势;姿态",
     "phonetic_symbol": "/‘dʒestʃə/",
     "word": "gesture"
@@ -8407,12 +8185,6 @@
   },
   {
     "initial": "G",
-    "mean": "n.神，神像;上帝",
-    "phonetic_symbol": "/gɔd/",
-    "word": "God"
-  },
-  {
-    "initial": "G",
     "mean": "n.金;钱财a.金制的",
     "phonetic_symbol": "/gəuld/",
     "word": "gold"
@@ -8428,12 +8200,6 @@
     "mean": "a.好的;有本事的",
     "phonetic_symbol": "/gud/",
     "word": "good"
-  },
-  {
-    "initial": "G",
-    "mean": "int.再见，再会",
-    "phonetic_symbol": "//",
-    "word": "goodbye"
   },
   {
     "initial": "G",
@@ -8557,12 +8323,6 @@
   },
   {
     "initial": "G",
-    "mean": "n.(曲线)图，图表",
-    "phonetic_symbol": "/græf/",
-    "word": "graph"
-  },
-  {
-    "initial": "G",
     "mean": "vt.抓紧;掌握n.抓",
     "phonetic_symbol": "/gra:sp/",
     "word": "grasp"
@@ -8614,12 +8374,6 @@
     "mean": "a.贪吃的;贪婪的",
     "phonetic_symbol": "/‘gri:di/",
     "word": "greedy"
-  },
-  {
-    "initial": "G",
-    "mean": "a.希腊的n.希腊人",
-    "phonetic_symbol": "/gri:k/",
-    "word": "Greek"
   },
   {
     "initial": "G",
@@ -8756,12 +8510,6 @@
   {
     "initial": "G",
     "mean": "n.体育馆，健身房",
-    "phonetic_symbol": "/dʒim/",
-    "word": "gym"
-  },
-  {
-    "initial": "G",
-    "mean": "n.体育馆，健身房",
     "phonetic_symbol": "/dʒim’neizjəm/",
     "word": "gymnasium"
   },
@@ -8860,12 +8608,6 @@
     "mean": "a.快乐的;幸福的",
     "phonetic_symbol": "/‘hæpi/",
     "word": "happy"
-  },
-  {
-    "initial": "H",
-    "mean": "n.海港，港口vt.庇护",
-    "phonetic_symbol": "/‘ha:bə/",
-    "word": "harbour"
   },
   {
     "initial": "H",
@@ -9073,12 +8815,6 @@
   },
   {
     "initial": "H",
-    "mean": "n.直升机",
-    "phonetic_symbol": "/‘helikɔptə/",
-    "word": "helicopter"
-  },
-  {
-    "initial": "H",
     "mean": "n.地狱;极大的痛苦",
     "phonetic_symbol": "/hel/",
     "word": "hell"
@@ -9145,12 +8881,6 @@
   },
   {
     "initial": "H",
-    "mean": "a.英雄的;英勇的",
-    "phonetic_symbol": "/hi’rəuik/",
-    "word": "herɔic"
-  },
-  {
-    "initial": "H",
     "mean": "pron.她的(所有物)",
     "phonetic_symbol": "/hə:z/",
     "word": "hers"
@@ -9166,12 +8896,6 @@
     "mean": "vi.犹豫，踌躇;含糊",
     "phonetic_symbol": "/‘heziteit/",
     "word": "hesitate"
-  },
-  {
-    "initial": "H",
-    "mean": "ini.嗨(表示问候等)",
-    "phonetic_symbol": "/hai/",
-    "word": "hi"
   },
   {
     "initial": "H",
@@ -9313,18 +9037,6 @@
   },
   {
     "initial": "H",
-    "mean": "n.光荣;尊敬，敬意",
-    "phonetic_symbol": "/‘ɔnə/",
-    "word": "honour"
-  },
-  {
-    "initial": "H",
-    "mean": "a.诚实的;光荣的",
-    "phonetic_symbol": "/‘ɔnərəbl/",
-    "word": "honourable"
-  },
-  {
-    "initial": "H",
     "mean": "n.钩，挂钩vt.钩住",
     "phonetic_symbol": "/huk/",
     "word": "hook"
@@ -9376,12 +9088,6 @@
     "mean": "n.马;马科动物",
     "phonetic_symbol": "/hɔ:s/",
     "word": "horse"
-  },
-  {
-    "initial": "H",
-    "mean": "n.马力",
-    "phonetic_symbol": "/‘hɔ:spauə/",
-    "word": "horsepower"
   },
   {
     "initial": "H",
@@ -9475,12 +9181,6 @@
   },
   {
     "initial": "H",
-    "mean": "n.幽默，诙谐，幽默感",
-    "phonetic_symbol": "/‘hju:mə/",
-    "word": "humour"
-  },
-  {
-    "initial": "H",
     "mean": "num.百，百个n.许多",
     "phonetic_symbol": "/‘hΛndrid/",
     "word": "hundred"
@@ -9535,21 +9235,9 @@
   },
   {
     "initial": "I",
-    "mean": "pron.(主格)我",
-    "phonetic_symbol": "/ai/",
-    "word": "I"
-  },
-  {
-    "initial": "I",
     "mean": "n.冰，冰块vt.冰镇",
     "phonetic_symbol": "/ais/",
     "word": "ice"
-  },
-  {
-    "initial": "I",
-    "mean": "n.冰淇淋",
-    "phonetic_symbol": "/‘ais’kri:m/",
-    "word": "ice-cream"
   },
   {
     "initial": "I",
@@ -9829,12 +9517,6 @@
   },
   {
     "initial": "I",
-    "mean": "a.印度的n.印度人",
-    "phonetic_symbol": "/‘indiən/",
-    "word": "Indian"
-  },
-  {
-    "initial": "I",
     "mean": "vt.标示，表示;表明",
     "phonetic_symbol": "/‘indikeit/",
     "word": "indicate"
@@ -9880,12 +9562,6 @@
     "mean": "a.工业的;产业的",
     "phonetic_symbol": "/in’dΛstriəl/",
     "word": "industrial"
-  },
-  {
-    "initial": "I",
-    "mean": "vt.使工业化",
-    "phonetic_symbol": "/in’dΛstriəlaiz/",
-    "word": "industrialize"
   },
   {
     "initial": "I",
@@ -10012,12 +9688,6 @@
     "mean": "a.清白的，幼稚的",
     "phonetic_symbol": "/‘inəsnt/",
     "word": "innocent"
-  },
-  {
-    "initial": "I",
-    "mean": "n.输入;投入的资金",
-    "phonetic_symbol": "/‘input/",
-    "word": "input"
   },
   {
     "initial": "I",
@@ -10417,12 +10087,6 @@
   },
   {
     "initial": "I",
-    "mean": "a.意大利的n.意大利人",
-    "phonetic_symbol": "/i’tæljən/",
-    "word": "Italian"
-  },
-  {
-    "initial": "I",
     "mean": "n.条，条款;一条",
     "phonetic_symbol": "/‘aitəm/",
     "word": "item"
@@ -10459,18 +10123,6 @@
   },
   {
     "initial": "J",
-    "mean": "n.一月",
-    "phonetic_symbol": "/‘dʒænjuəri/",
-    "word": "January"
-  },
-  {
-    "initial": "J",
-    "mean": "a.日本的n.日本人",
-    "phonetic_symbol": "/dʒæpə’ni:z/",
-    "word": "Japanese"
-  },
-  {
-    "initial": "J",
     "mean": "n.罐子，坛子，广口瓶",
     "phonetic_symbol": "/dʒa:/",
     "word": "jar"
@@ -10480,12 +10132,6 @@
     "mean": "n.颌，颚",
     "phonetic_symbol": "/dʒɔ:/",
     "word": "jaw"
-  },
-  {
-    "initial": "J",
-    "mean": "n.爵士音乐，爵士舞曲",
-    "phonetic_symbol": "/dʒæz/",
-    "word": "jazz"
   },
   {
     "initial": "J",
@@ -10510,12 +10156,6 @@
     "mean": "n.职业;工作;零活",
     "phonetic_symbol": "/dʒob/",
     "word": "job"
-  },
-  {
-    "initial": "J",
-    "mean": "vt.参加;连接",
-    "phonetic_symbol": "/dʒɔin/",
-    "word": "jɔin"
   },
   {
     "initial": "J",
@@ -10555,33 +10195,15 @@
   },
   {
     "initial": "J",
-    "mean": "n.意见;审判;判断",
-    "phonetic_symbol": "/‘dʒΛdʒmənt/",
-    "word": "judgement"
-  },
-  {
-    "initial": "J",
     "mean": "n.(水果等)汁，液",
     "phonetic_symbol": "/dʒu:s/",
     "word": "juice"
   },
   {
     "initial": "J",
-    "mean": "n.七月",
-    "phonetic_symbol": "/dʒu:’lai/",
-    "word": "July"
-  },
-  {
-    "initial": "J",
     "mean": "vi.跳;暴涨vt.跳过",
     "phonetic_symbol": "/dʒΛmp/",
     "word": "jump"
-  },
-  {
-    "initial": "J",
-    "mean": "n.六月",
-    "phonetic_symbol": "/dʒu:n/",
-    "word": "June"
   },
   {
     "initial": "J",
@@ -10783,12 +10405,6 @@
   },
   {
     "initial": "L",
-    "mean": "n.劳动;工作;劳工",
-    "phonetic_symbol": "/‘leibə/",
-    "word": "labour"
-  },
-  {
-    "initial": "L",
     "mean": "vi.&vi.&n.缺乏，不足",
     "phonetic_symbol": "/læk/",
     "word": "lack"
@@ -10867,12 +10483,6 @@
   },
   {
     "initial": "L",
-    "mean": "n.激光",
-    "phonetic_symbol": "/‘leizə/",
-    "word": "laser"
-  },
-  {
-    "initial": "L",
     "mean": "a.最后的ad.最后",
     "phonetic_symbol": "/la:st/",
     "word": "last"
@@ -10900,12 +10510,6 @@
     "mean": "ad.后来;过一会儿",
     "phonetic_symbol": "/‘leitə/",
     "word": "later"
-  },
-  {
-    "initial": "L",
-    "mean": "a.拉丁的n.拉丁语",
-    "phonetic_symbol": "/‘lætin/",
-    "word": "Latin"
   },
   {
     "initial": "L",
@@ -10972,12 +10576,6 @@
     "mean": "n.层，层次;铺设者",
     "phonetic_symbol": "/‘leiə/",
     "word": "layer"
-  },
-  {
-    "initial": "L",
-    "mean": "n.布局，安排，设计",
-    "phonetic_symbol": "/‘leiaut/",
-    "word": "layout"
   },
   {
     "initial": "L",
@@ -11431,12 +11029,6 @@
   },
   {
     "initial": "L",
-    "mean": "n.起居室",
-    "phonetic_symbol": "/‘liviŋ’ru:m/",
-    "word": "living-room"
-  },
-  {
-    "initial": "L",
     "mean": "vt.装;装满n.负载",
     "phonetic_symbol": "/ləud/",
     "word": "load"
@@ -11833,12 +11425,6 @@
   },
   {
     "initial": "M",
-    "mean": "n.三月",
-    "phonetic_symbol": "/ma:tʃ/",
-    "word": "March"
-  },
-  {
-    "initial": "M",
     "mean": "vi.行军;游行示威",
     "phonetic_symbol": "/ma:tʃ/",
     "word": "march"
@@ -11890,12 +11476,6 @@
     "mean": "a.奇迹般的;了不起的",
     "phonetic_symbol": "/‘ma:viləs/",
     "word": "marvelous"
-  },
-  {
-    "initial": "M",
-    "mean": "a.马克思主义的",
-    "phonetic_symbol": "/‘ma:ksist/",
-    "word": "Marxist"
   },
   {
     "initial": "M",
@@ -11953,12 +11533,6 @@
   },
   {
     "initial": "M",
-    "mean": "n.(英)数学",
-    "phonetic_symbol": "/mæθs/",
-    "word": "maths"
-  },
-  {
-    "initial": "M",
     "mean": "n.事情;物质vi.要紧",
     "phonetic_symbol": "/‘mætə/",
     "word": "matter"
@@ -11974,12 +11548,6 @@
     "mean": "n.最大量a.最大的",
     "phonetic_symbol": "/‘mæksiməm/",
     "word": "maximum"
-  },
-  {
-    "initial": "M",
-    "mean": "n.五月",
-    "phonetic_symbol": "/mei/",
-    "word": "May"
   },
   {
     "initial": "M",
@@ -12034,12 +11602,6 @@
     "mean": "n.意义，意思;意图",
     "phonetic_symbol": "/‘mi:niŋ/",
     "word": "meaning"
-  },
-  {
-    "initial": "M",
-    "mean": "n.方法，手段，工具",
-    "phonetic_symbol": "/mi:nz/",
-    "word": "means"
   },
   {
     "initial": "M",
@@ -12178,12 +11740,6 @@
     "mean": "n.水银，汞",
     "phonetic_symbol": "/‘mə:kjuri/",
     "word": "mercury"
-  },
-  {
-    "initial": "M",
-    "mean": "n.水星",
-    "phonetic_symbol": "/‘mə:kjuri/",
-    "word": "Mercury"
   },
   {
     "initial": "M",
@@ -12523,18 +12079,6 @@
   },
   {
     "initial": "M",
-    "mean": "a.湿润的;多雨的",
-    "phonetic_symbol": "/mɔist/",
-    "word": "mɔist"
-  },
-  {
-    "initial": "M",
-    "mean": "n.潮湿，湿气;温度",
-    "phonetic_symbol": "/‘mɔistʃə/",
-    "word": "mɔisture"
-  },
-  {
-    "initial": "M",
     "mean": "n.分子，克分子",
     "phonetic_symbol": "/‘mɔlikju:l/",
     "word": "molecule"
@@ -12544,12 +12088,6 @@
     "mean": "n.片刻，瞬间，时刻",
     "phonetic_symbol": "/‘məumənt/",
     "word": "moment"
-  },
-  {
-    "initial": "M",
-    "mean": "n.星期一",
-    "phonetic_symbol": "/‘mΛndi/",
-    "word": "Monday"
   },
   {
     "initial": "M",
@@ -12913,12 +12451,6 @@
   },
   {
     "initial": "N",
-    "mean": "a.附近的ad.在附近",
-    "phonetic_symbol": "/‘niəbai/",
-    "word": "nearby"
-  },
-  {
-    "initial": "N",
     "mean": "ad.差不多;密切地",
     "phonetic_symbol": "/‘niəli/",
     "word": "nearly"
@@ -12976,24 +12508,6 @@
     "mean": "vt.忽视，忽略;疏忽",
     "phonetic_symbol": "/ni’glekt/",
     "word": "neglect"
-  },
-  {
-    "initial": "N",
-    "mean": "n.黑人",
-    "phonetic_symbol": "/‘ni:grəu/",
-    "word": "ŋegro"
-  },
-  {
-    "initial": "N",
-    "mean": "n.邻居，邻国，邻人",
-    "phonetic_symbol": "/‘neibə/",
-    "word": "neighbour"
-  },
-  {
-    "initial": "N",
-    "mean": "n.邻居关系;邻近",
-    "phonetic_symbol": "/‘neibəhud/",
-    "word": "neighbourhood"
   },
   {
     "initial": "N",
@@ -13153,18 +12667,6 @@
   },
   {
     "initial": "N",
-    "mean": "n.喧闹声;响声;噪声",
-    "phonetic_symbol": "/nɔiz/",
-    "word": "nɔise"
-  },
-  {
-    "initial": "N",
-    "mean": "a.嘈杂的;喧闹的",
-    "phonetic_symbol": "/‘nɔizi/",
-    "word": "nɔisy"
-  },
-  {
-    "initial": "N",
     "mean": "pron.没有人ad.毫不",
     "phonetic_symbol": "/nΛn/",
     "word": "none"
@@ -13279,12 +12781,6 @@
   },
   {
     "initial": "N",
-    "mean": "n.十一月",
-    "phonetic_symbol": "/nəu’vembə/",
-    "word": "ŋovember"
-  },
-  {
-    "initial": "N",
     "mean": "ad.现在;立刻;于是",
     "phonetic_symbol": "/nau/",
     "word": "now"
@@ -13348,12 +12844,6 @@
     "mean": "n.坚果，干果;螺母",
     "phonetic_symbol": "/nΛt/",
     "word": "nut"
-  },
-  {
-    "initial": "N",
-    "mean": "n.尼龙，耐纶",
-    "phonetic_symbol": "/‘nailən/",
-    "word": "nylon"
   },
   {
     "initial": "O",
@@ -13471,18 +12961,6 @@
   },
   {
     "initial": "O",
-    "mean": "ad.…点钟",
-    "phonetic_symbol": "/ə’klɔk/",
-    "word": "o'clock"
-  },
-  {
-    "initial": "O",
-    "mean": "n.十月",
-    "phonetic_symbol": "/ɔk’təubə/",
-    "word": "October"
-  },
-  {
-    "initial": "O",
     "mean": "a.奇数的;单只的",
     "phonetic_symbol": "/od/",
     "word": "odd"
@@ -13546,12 +13024,6 @@
     "mean": "n.油;石油vt.加油于",
     "phonetic_symbol": "/ɔil/",
     "word": "oil"
-  },
-  {
-    "initial": "O",
-    "mean": "(缩作OK)a.&ad.对，好",
-    "phonetic_symbol": "/‘əu’kei/",
-    "word": "okay"
   },
   {
     "initial": "O",
@@ -13636,12 +13108,6 @@
     "mean": "n.操作;手术;运算",
     "phonetic_symbol": "/ɔpə’reiʃən/",
     "word": "operation"
-  },
-  {
-    "initial": "O",
-    "mean": "a.操作上的;可使用的",
-    "phonetic_symbol": "/ɔpə’reiʃənl/",
-    "word": "operational"
   },
   {
     "initial": "O",
@@ -14008,12 +13474,6 @@
     "mean": "n.氧气",
     "phonetic_symbol": "/‘ɔksidʒən/",
     "word": "oxygen"
-  },
-  {
-    "initial": "P",
-    "mean": "n.步，步速vi.踱步",
-    "phonetic_symbol": "/peis/",
-    "word": "pace"
   },
   {
     "initial": "P",
@@ -14416,12 +13876,6 @@
     "mean": "vt.察觉，发觉;理解",
     "phonetic_symbol": "/pə’si:v/",
     "word": "perceive"
-  },
-  {
-    "initial": "P",
-    "mean": "n.百分之…",
-    "phonetic_symbol": "/pə’sent/",
-    "word": "percent"
   },
   {
     "initial": "P",
@@ -14935,21 +14389,9 @@
   },
   {
     "initial": "P",
-    "mean": "n.点;要点;细目;分",
-    "phonetic_symbol": "/pɔint/",
-    "word": "pɔint"
-  },
-  {
-    "initial": "P",
     "mean": "n.毒，毒药vt.毒害",
     "phonetic_symbol": "/‘pɔizn/",
     "word": "poison"
-  },
-  {
-    "initial": "P",
-    "mean": "a.有毒的，有害的",
-    "phonetic_symbol": "/‘pɔiznəs/",
-    "word": "pɔisonous"
   },
   {
     "initial": "P",
@@ -16063,12 +15505,6 @@
   },
   {
     "initial": "R",
-    "mean": "n.兔子，野兔",
-    "phonetic_symbol": "/‘ræbit/",
-    "word": "rabbit"
-  },
-  {
-    "initial": "R",
     "mean": "n.比赛，竞赛，竞争",
     "phonetic_symbol": "/reis/",
     "word": "race"
@@ -16099,27 +15535,9 @@
   },
   {
     "initial": "R",
-    "mean": "n.雷达，无线电探测器",
-    "phonetic_symbol": "/‘reidə/",
-    "word": "radar"
-  },
-  {
-    "initial": "R",
     "mean": "n.放射，发射;辐射能",
     "phonetic_symbol": "/reidi’eiʃən/",
     "word": "radiation"
-  },
-  {
-    "initial": "R",
-    "mean": "n.无线电;收音机",
-    "phonetic_symbol": "/‘reidiəu/",
-    "word": "radio"
-  },
-  {
-    "initial": "R",
-    "mean": "a.放射性的",
-    "phonetic_symbol": "/reidiəu’æktiv/",
-    "word": "radioactive"
   },
   {
     "initial": "R",
@@ -16855,12 +16273,6 @@
   },
   {
     "initial": "R",
-    "mean": "n.水库;蓄水池",
-    "phonetic_symbol": "//",
-    "word": "reservior"
-  },
-  {
-    "initial": "R",
     "mean": "n.居住;驻扎;住处",
     "phonetic_symbol": "/‘rezidəns/",
     "word": "residence"
@@ -17119,12 +16531,6 @@
   },
   {
     "initial": "R",
-    "mean": "n.机器人;自动机",
-    "phonetic_symbol": "/‘rəubɔt/",
-    "word": "robot"
-  },
-  {
-    "initial": "R",
     "mean": "n.火箭，火箭发动机",
     "phonetic_symbol": "/‘rɔkit/",
     "word": "rocket"
@@ -17146,12 +16552,6 @@
     "mean": "n.滚柱，滚筒，滚轴",
     "phonetic_symbol": "/‘rəulə/",
     "word": "roller"
-  },
-  {
-    "initial": "R",
-    "mean": "n.古罗马人a.罗马的",
-    "phonetic_symbol": "/‘rəumən/",
-    "word": "ooman"
   },
   {
     "initial": "R",
@@ -17479,12 +16879,6 @@
   },
   {
     "initial": "S",
-    "mean": "n.半导体",
-    "phonetic_symbol": "/semikən’dΛktə/",
-    "word": "semiconductor"
-  },
-  {
-    "initial": "S",
     "mean": "n.参议院，上院",
     "phonetic_symbol": "/senit/",
     "word": "senate"
@@ -17680,12 +17074,6 @@
     "mean": "ad.斜着，斜向一边地",
     "phonetic_symbol": "/‘saidweiz/",
     "word": "sideways"
-  },
-  {
-    "initial": "S",
-    "mean": "n.观光，游览",
-    "phonetic_symbol": "/‘saitsi:iŋ/",
-    "word": "sightseeing"
   },
   {
     "initial": "S",
@@ -17995,12 +17383,6 @@
   },
   {
     "initial": "S",
-    "mean": "n.航天器，宇宙飞船",
-    "phonetic_symbol": "/‘speiskra:ft/",
-    "word": "spacecraft"
-  },
-  {
-    "initial": "S",
     "mean": "n.铲，铁锹",
     "phonetic_symbol": "/speid/",
     "word": "spade"
@@ -18082,12 +17464,6 @@
     "mean": "vt.劈开vi.被劈开",
     "phonetic_symbol": "/split/",
     "word": "split"
-  },
-  {
-    "initial": "S",
-    "mean": "vt.损坏，糟蹋;宠坏",
-    "phonetic_symbol": "/spɔil/",
-    "word": "spɔil"
   },
   {
     "initial": "S",
@@ -18513,12 +17889,6 @@
     "initial": "S",
     "mean": "n.硫(磺)，硫黄",
     "phonetic_symbol": "/‘sΛlfə/",
-    "word": "sulfur"
-  },
-  {
-    "initial": "S",
-    "mean": "n.硫(磺)，硫黄",
-    "phonetic_symbol": "/‘sΛlfə/",
     "word": "sulphur"
   },
   {
@@ -18574,12 +17944,6 @@
     "mean": "vt.交出vi.投降",
     "phonetic_symbol": "/sə’rendə/",
     "word": "surrender"
-  },
-  {
-    "initial": "S",
-    "mean": "vt.俯瞰;检查;测量",
-    "phonetic_symbol": "/sə’raundiŋz/n.周围的事物，环境survey/sə:’vei/",
-    "word": "surroundings"
   },
   {
     "initial": "S",
@@ -18706,12 +18070,6 @@
     "mean": "a.综合的;合成的",
     "phonetic_symbol": "/sin’θetik/",
     "word": "synthetic"
-  },
-  {
-    "initial": "S",
-    "mean": "a.有系统的;有计划的",
-    "phonetic_symbol": "/sisti’mætik(əl)/",
-    "word": "systematic(al)"
   },
   {
     "initial": "T",
@@ -19051,12 +18409,6 @@
   },
   {
     "initial": "T",
-    "mean": "n.厕所，盥洗室，浴室",
-    "phonetic_symbol": "/‘tɔilit/",
-    "word": "tɔilet"
-  },
-  {
-    "initial": "T",
     "mean": "n.忍受，容忍;公差",
     "phonetic_symbol": "/‘tɔlərəns/",
     "word": "tolerance"
@@ -19186,12 +18538,6 @@
     "mean": "n.变压器，转换器",
     "phonetic_symbol": "/trænsfə’meiʃən/n.变化;改造;转变transformer/træns’fɔ:mə/",
     "word": "transformation"
-  },
-  {
-    "initial": "T",
-    "mean": "n.晶体管",
-    "phonetic_symbol": "/træn’sistə/",
-    "word": "transistor"
   },
   {
     "initial": "T",
@@ -19471,12 +18817,6 @@
   },
   {
     "initial": "U",
-    "mean": "ad.无容置疑，肯定地",
-    "phonetic_symbol": "/Λn’dautidli/",
-    "word": "undoubtedly"
-  },
-  {
-    "initial": "U",
     "mean": "a.心神不安的，忧虑的",
     "phonetic_symbol": "/Λn’i:zi/",
     "word": "uneasy"
@@ -19579,12 +18919,6 @@
   },
   {
     "initial": "U",
-    "mean": "a.直到最近的，现代的",
-    "phonetic_symbol": "/‘Λptə’deit/",
-    "word": "up-to-date"
-  },
-  {
-    "initial": "U",
     "mean": "a.向上的，上升的",
     "phonetic_symbol": "/‘Λpwəd/",
     "word": "upward"
@@ -19684,12 +19018,6 @@
     "mean": "vi.突然不见，消失",
     "phonetic_symbol": "/‘væniʃ/",
     "word": "vanish"
-  },
-  {
-    "initial": "V",
-    "mean": "n.汽，蒸气",
-    "phonetic_symbol": "/‘veipə/",
-    "word": "vapour"
   },
   {
     "initial": "V",
@@ -19861,12 +19189,6 @@
   },
   {
     "initial": "V",
-    "mean": "n.维生素，维他命",
-    "phonetic_symbol": "/‘vitəmin/",
-    "word": "vitamin"
-  },
-  {
-    "initial": "V",
     "mean": "a.鲜艳的;生动的",
     "phonetic_symbol": "/‘vivid/",
     "word": "vivid"
@@ -19912,12 +19234,6 @@
     "mean": "vt.开展(运动)",
     "phonetic_symbol": "/weidʒ/",
     "word": "wage"
-  },
-  {
-    "initial": "W",
-    "mean": "n.四轮运货马车",
-    "phonetic_symbol": "/‘wægən/",
-    "word": "waggon"
   },
   {
     "initial": "W",
@@ -20155,12 +19471,6 @@
   },
   {
     "initial": "W",
-    "mean": "a.遍及全球的",
-    "phonetic_symbol": "/‘wə:ldwaid/",
-    "word": "world-wide"
-  },
-  {
-    "initial": "W",
     "mean": "n.虫，蠕虫",
     "phonetic_symbol": "/wə:m/",
     "word": "worm"
@@ -20224,12 +19534,6 @@
     "mean": "n.腕，腕关节",
     "phonetic_symbol": "/rist/",
     "word": "wrist"
-  },
-  {
-    "initial": "X",
-    "mean": "n.X射线，X光",
-    "phonetic_symbol": "/‘eks’rei/",
-    "word": "X-ray"
   },
   {
     "initial": "Y",

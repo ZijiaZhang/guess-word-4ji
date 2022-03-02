@@ -1,6 +1,6 @@
 const {ROOM_STATE_CREATED, ROOM_STATE_ENDED, ROOM_STATE_STARTED, STATUS_PARTIAL_CORRECT, STATUS_ALL_CORRECT, STATUS_NOT_CORRECT, PLAYER_ROLE_CREATOR, PLAYER_ROLE_PLAYER, STATUS_UNKNOWN} = require('./constants')
-const {redisClient, addRoomHistory, createRoom, getRoomFromCache, playerJoinRoom, setRoomEnd, setRoomStart, removePlayerFromRoom, markPlayerAsDisconnected,
-    findMatch
+const {redisClient, addRoomHistory, createRoom, playerJoinRoom, getRoomFromCacheNoTransaction, setRoomEnd, setRoomStart, removePlayerFromRoom, markPlayerAsDisconnected,
+    findMatch, updateRoomSettings
 } = require('./redis')
 
 var express = require('express');
@@ -59,6 +59,7 @@ function normalizePort(val) {
  */
 
 const redisAdapter = require('@socket.io/redis-adapter');
+const fs = require('fs')
 const pubClient = redisClient;
 const subClient = pubClient.duplicate();
 const serverPromise =  Promise.all([pubClient.connect(), subClient.connect()]).then(() => {
@@ -71,10 +72,12 @@ const serverPromise =  Promise.all([pubClient.connect(), subClient.connect()]).t
     io.adapter(redisAdapter(pubClient, subClient));
 
     const fs = require('fs');
-    const rawdata = fs.readFileSync('data/Words/all.json');
+    const rawdata = fs.readFileSync('data/Words/index_by_len.json');
+    const raw_dict = fs.readFileSync('data/DictWord/index_by_len.json');
     const all_words = JSON.parse(rawdata);
-    const get_random_word = function () {
-        return all_words[Math.floor(Math.random() * all_words.length)]
+    const all_dict = JSON.parse(raw_dict);
+    const get_random_word = function (word_len) {
+        return all_words[word_len - 1][Math.floor(Math.random() * all_words[word_len - 1].length)]
     }
 
     const parse_room_data = (room) => {
@@ -85,7 +88,8 @@ const serverPromise =  Promise.all([pubClient.connect(), subClient.connect()]).t
             created_time: room.created_time,
             history: room.history,
             current_round: room.current_round,
-            pending_players: room.pending_players
+            pending_players: room.pending_players,
+            timeout: room.timeout
         }
     }
 
@@ -93,7 +97,7 @@ const serverPromise =  Promise.all([pubClient.connect(), subClient.connect()]).t
         if(!room_key){
             throw {msg: 'connection error roomKey error'}
         }
-        let room = await getRoomFromCache(room_key)
+        let room = await getRoomFromCacheNoTransaction(room_key)
         return parse_room_data(room);
     }
 
@@ -229,6 +233,21 @@ const serverPromise =  Promise.all([pubClient.connect(), subClient.connect()]).t
             }
         }))
 
+        socket.on('update_room_setting', error_catcher_async(async (new_setting) => {
+            if(!socket.data.room_key){
+                throw {msg: 'connection error roomKey error'}
+            }
+            let room = await getRoomFromCacheNoTransaction(socket.data.room_key);
+            if (room.players[socket.data.player.player_id].role !==PLAYER_ROLE_CREATOR) {
+                throw {msg: 'Only Owner can Change Game Settings'}
+            }
+            room = await updateRoomSettings(socket.data.room_key, new_setting);
+            const log = {phase: 'room setting updated', room};
+            console.log(JSON.stringify(log))
+            io.to(socket.data.room_key).emit('info',  `Room Setting Updated`);
+            io.to(socket.data.room_key).emit('room_update', parse_room_data(room));
+        }))
+
         socket.on('get', error_catcher_async(async (callBack) => {
             let room_data = await get_room_data(socket.data.room_key);
             callBack(room_data);
@@ -238,11 +257,12 @@ const serverPromise =  Promise.all([pubClient.connect(), subClient.connect()]).t
             if(!socket.data.room_key){
                 throw {msg: 'connection error roomKey error'}
             }
-            let room = await getRoomFromCache(socket.data.room_key);
+            let room = await getRoomFromCacheNoTransaction(socket.data.room_key);
             if (room.players[socket.data.player.player_id].role !==PLAYER_ROLE_CREATOR) {
                 throw {msg: 'only Owner can start the game'}
             }
-            room = await setRoomStart(socket.data.room_key, get_random_word());
+            const [min, max] = room.word_len ? room.word_len : [5,5]
+            room = await setRoomStart(socket.data.room_key, get_random_word(Math.floor(Math.random() * (max - min) + min)));
             const log = {phase: 'game_start', room};
             console.log(JSON.stringify(log))
             io.to(socket.data.room_key).emit('game_start', room.word.word.length);
@@ -252,7 +272,7 @@ const serverPromise =  Promise.all([pubClient.connect(), subClient.connect()]).t
             if(!socket.data.room_key){
                 throw {msg: 'connection error roomKey error'}
             }
-            let room = await getRoomFromCache(socket.data.room_key);
+            let room = await getRoomFromCacheNoTransaction(socket.data.room_key);
             callBack(room.word.word.length);
         }))
 
@@ -261,15 +281,21 @@ const serverPromise =  Promise.all([pubClient.connect(), subClient.connect()]).t
                 throw {msg: 'connection error roomKey error'}
             }
             word = word.toLowerCase();
-            let room = await getRoomFromCache(socket.data.room_key);
+            let room = await getRoomFromCacheNoTransaction(socket.data.room_key);
             const target = room.word.word;
             // console.log(target);
             if (word.length !== target.length) {
                 errorCallBack('word length mismatch');
                 return;
             }
+            if(!(word in all_dict[word.length - 1])){
+                socket.emit('show_error','Not a valid word!');
+                return;
+            }
+
             if (socket.data.player.player_id !== room.pending_players[room.current_round]) {
-                errorCallBack(`Not your round ${socket.data.player.player_id} !=== ${room.pending_players[room.current_round]}`);
+                socket.emit('show_error','Not your round!');
+                // errorCallBack(`Not your round ${socket.data.player.player_id} !=== ${room.pending_players[room.current_round]}`);
                 return
             }
             const final_result = get_word_matches(word, target)
@@ -290,14 +316,17 @@ const serverPromise =  Promise.all([pubClient.connect(), subClient.connect()]).t
             if(!socket.data.room_key){
                 throw {msg: 'connection error roomKey error'}
             }
-            const room = await getRoomFromCache(socket.data.room_key);
+            const room = await getRoomFromCacheNoTransaction(socket.data.room_key);
             if (room.status === ROOM_STATE_ENDED) {
                 callBack(room.word);
             }
         }))
 
-        socket.on('timeout', error_catcher_async(async () => {
-            let room = await getRoomFromCache(socket.data.room_key);
+        socket.on('timeout', error_catcher_async(async (player_id) => {
+            let room = await getRoomFromCacheNoTransaction(socket.data.room_key);
+            if (!room.timeout){
+                return;
+            }
             if (new Date() - 30 * 1000 < room.current_round_time){
                 return;
             }
@@ -308,22 +337,31 @@ const serverPromise =  Promise.all([pubClient.connect(), subClient.connect()]).t
                     status: STATUS_UNKNOWN
                 }
             })
-            const player_id = room.pending_players[room.current_round]
-            room = await addRoomHistory(socket.data.room_key, {
+            console.log(`${player_id} Timeout`, JSON.stringify({room}));
+            // const player_id = room.pending_players[room.current_round]
+            let new_room = await addRoomHistory(socket.data.room_key, {
                 word: final_result,
                 player_id: player_id,
                 player_name: room.players[player_id].player_name + ' TIMEOUT'
             })
-            const log = {phase: `${room.players[player_id]} timeout`, room};
+
+            if(!new_room){
+                return;
+            }
+
+            const log = {phase: `${new_room.players[player_id].player_name} timeout`, new_room};
             console.log(JSON.stringify(log));
-            io.to(socket.data.room_key).emit('room_update', parse_room_data(room));
+            io.to(socket.data.room_key).emit('room_update', parse_room_data(new_room));
         }));
 
         socket.on('leave_room', error_catcher_async(async () => {
             if (!socket.data.room_key || !socket.data.player || !socket.data.player.player_id) {
                 return;
             }
-            let room = await removePlayerFromRoom(socket.data.room_key, socket.data.player.player_id)
+            let room;
+            while(!room){
+             room = await removePlayerFromRoom(socket.data.room_key, socket.data.player.player_id)
+            }
             socket.leave(socket.data.room_key);
             io.to(socket.data.room_key).emit('player_left', parse_room_data(room));
             if(room.status !== ROOM_STATE_ENDED) {
