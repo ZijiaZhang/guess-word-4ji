@@ -16,8 +16,9 @@
           </v-list-item-content>
         </v-list-item>
       </v-list>
+      <GameOptions/>
       <v-btn v-on:click="start_game" v-if="this.$store.state.room_state.players && this.$store.state.room_state.players[$store.state.playerID].role === 'creator'" >Start</v-btn>
-      <v-card-subtitle class="black--text" v-else>Waiting for creator to start the game ...</v-card-subtitle>
+      <v-card-subtitle class="black--text" v-else>{{ $store.state.room_state.public ? 'Waiting for more players...' : 'Waiting for creator to start the game ...'  }}</v-card-subtitle>
       <v-card-text class="text-caption">{{ JSON.stringify(this.$store.state.room_state) }}</v-card-text>
     </v-card>
   </div>
@@ -26,31 +27,36 @@
 <script>
 
 import Vue from 'vue'
+import GameOptions from '@/components/GameOptions'
 
 export default {
   name: 'WaitingRoom',
+  components: { GameOptions },
   methods: {
     start_game: function () {
       Vue.prototype.$socket.emit('start');
     }
   },
   mounted() {
-    Vue.prototype.$socket.emit('get');
-    Vue.prototype.$socket.on('room_update', (room_info) => {
+    Vue.prototype.$socket.emit('get', (room_info) => {
       this.$store.commit('setRoomState', room_info)
-      if(room_info.status === 'started'){
+      if (room_info.status === 'started'){
         this.$router.push('/game');
       }
-    })
+    });
+    Vue.prototype.$socket.on('player_list_updated', (playerList) => {
+      this.$store.commit('setPlayer', playerList)
+    });
     Vue.prototype.$socket.on('game_start', (word_len) => {
       console.log(word_len);
+      this.$store.commit('setRoomStatus', 'started');
       this.$store.commit('setWordLen', word_len);
       this.$router.push('/game');
     })
   },
   beforeDestroy() {
-    Vue.prototype.$socket.off('room_update')
     Vue.prototype.$socket.off('game_start')
+    Vue.prototype.$socket.off('player_list_updated//')
   }
 }
 </script>

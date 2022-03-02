@@ -12,11 +12,12 @@ const store = new Vuex.Store({
   modules: {
   },
   state: {
-    playerName: 'Player',
+    playerName: undefined,
     playerID: uuidv4(),
     room_key: undefined,
     room_state: {},
-    word_len: 0
+    word_len: 0,
+    connected: Vue.prototype.$socket? Vue.prototype.$socket.connected : false
   },
   mutations: {
     setRoom: function (state, new_room_key) {
@@ -28,8 +29,19 @@ const store = new Vuex.Store({
     setRoomState: function (state, new_room_state) {
       state.room_state = new_room_state;
     },
+    setPlayer: function (state, new_players){
+      state.room_state.players = new_players;
+      state.room_state = {...state.room_state};
+    },
+    setRoomStatus: function (state, new_status) {
+      state.room_state.status = new_status;
+      state.room_state = {...state.room_state};
+    },
     setWordLen: function (state, new_word_len) {
       state.word_len = new_word_len;
+    },
+    setConnected: function (state, connected) {
+      state.connected = connected
     }
   }
 })

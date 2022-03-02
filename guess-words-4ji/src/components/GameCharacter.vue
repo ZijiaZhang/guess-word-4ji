@@ -1,6 +1,6 @@
 <template>
-  <div :class="color">
-    <span class="py-3 px-2">{{character}}</span>
+  <div :class="color + ' py-1 px-1'">
+    <span class="" style="font-family: monospace;">{{character}}</span>
   </div>
 </template>
 
@@ -13,22 +13,22 @@ export const STATUS_UNKNOWN = 'unknown';
 
 export default {
   name: 'GameCharacter',
-  props: ['character', 'status'],
+  props: ['character', 'status', 'compact'],
   computed: {
     color: function () {
       if(this.status === STATUS_ALL_CORRECT){
-        return 'green lighten-2 mx-1'
+        return 'green lighten-2'
       }
       if(this.status === STATUS_NOT_CORRECT){
-        return 'red lighten-1 mx-1'
+        return 'red lighten-1'
       }
       if(this.status === STATUS_PARTIAL_CORRECT){
-        return 'orange lighten-2 mx-1'
+        return 'orange lighten-2'
       }
       if(this.status === STATUS_UNKNOWN){
-        return 'grey lighten-1 mx-1'
+        return 'grey lighten-1'
       }
-      return 'grey lighten-1 mx-1'
+      return 'grey lighten-1'
     }
   }
 }
